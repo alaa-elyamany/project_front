@@ -1,0 +1,7 @@
+:host{
+    background: linear-gradient(-45deg, #fce8e2,#e7d8fa);
+    display: block;
+}
+.image_about{
+    border-radius: 50%;  
+}

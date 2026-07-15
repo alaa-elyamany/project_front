@@ -1,0 +1,25 @@
+:host{
+  display: block;
+  background: linear-gradient(#fce8e2, #e7d8fa);
+}
+
+/* old code kept as reference */
+h2 {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.card {
+  border: 2px solid #e53935;
+  box-shadow: 0 0 8px rgba(229, 57, 53, 0.25);
+}
+
+.card:hover {
+  border-color: #c62828;
+  box-shadow: 0 0 12px rgba(198, 40, 40, 0.35);
+}
+
+.card-title,
+.card-text {
+  color: #b71c1c;
+}

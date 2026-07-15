@@ -1,0 +1,20 @@
+<h2>Products</h2>
+
+
+
+ 
+  <div class="d-flex flex-wrap gap-3">
+    @for (prod of productArr; track prod._id) {
+      <div class="card" style="width: 18rem;">
+        <img [src]="prod.imageUrl" class="card-img-top" [alt]="prod.name" />
+        <div class="card-body">
+          <h5 class="card-title">{{ prod.name }}</h5>
+          <p class="card-text">{{ prod.price }}</p>
+          <a href="#" class="btn btn-primary">View</a>
+        </div>
+      </div>
+    }
+  </div>
+
+
+

@@ -1,0 +1,8 @@
+:host{
+    display: block;
+    background: linear-gradient(-45deg, #fce8e2,#e7d8fa);
+}
+.btn{
+    background-color:rgb(148, 80, 89);
+    color: white;
+}
