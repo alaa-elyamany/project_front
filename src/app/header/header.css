@@ -43,3 +43,13 @@ background-color:rgb(207, 168, 254) ;
     background-color:rgb(189, 138, 252) ;
     transform: scale(1.1);
 }
+#logout_button{
+    border: none;
+    background-color:rgb(207, 168, 254) ;
+    padding: 0 10px !important;
+    color:white;
+}
+#logout_button:hover{
+    background-color:rgb(189, 138, 252) ;
+    transform: scale(1.1);
+}

@@ -1,0 +1,13 @@
+:host{
+    background: linear-gradient(-45deg, #fce8e2,#e7d8fa);
+    display: block;
+}
+button{
+   background-color: rgb(184, 130, 250) ;
+   border: none;
+   color:white;
+   border-radius: 10px;
+}
+h2{
+    color: rgb(184, 130, 250);
+}

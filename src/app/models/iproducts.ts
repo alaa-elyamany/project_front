@@ -1,9 +1,11 @@
 export interface IProducts {
     _id:string;
     name: string;
-    price: number;
     description: string;
-    imageUrl: string;
+    category: 'dresses'|'tops'|'skirts'|'shoes'|'bags'|'haijab'|'accessories';
+    price: number;
     stock: number;
-    category: string;
+    imageUrl?: string;
+    createdAt?: Date;
+    updatedAt?: Date;
 }

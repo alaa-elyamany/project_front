@@ -1,0 +1,62 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow p-4" style="max-width: 450px; width: 100%;">
+    <h2 class="text-center mb-4">Create Account</h2>
+    <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <!-- First Name -->
+      <div class="mb-3">
+        <label class="form-label">First Name</label>
+        <input
+          type="text"
+          formControlName="firstname"
+          class="form-control"
+          placeholder="Enter your first name">
+      </div>
+      <!-- Last Name -->
+      <div class="mb-3">
+        <label class="form-label">Last Name</label>
+        <input
+          type="text"
+          formControlName="lastname"
+          class="form-control"
+          placeholder="Enter your last name">
+      </div>
+      <!-- Email -->
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input
+          type="email"
+          formControlName="email"
+          class="form-control"
+          placeholder="Enter your email">
+      </div>
+      <!-- Password -->
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          class="form-control"
+          placeholder="Create a password">
+      </div>
+      <!-- Terms -->
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="terms">
+        <label class="form-check-label" for="terms">
+          I agree to the Terms & Conditions
+        </label>
+      </div>
+
+      <!-- Sign Up Button -->
+      <button type="submit" class=" w-100">
+        Sign Up
+      </button>
+
+      <!-- Login Link -->
+      <p class="text-center mt-3 mb-0">
+        Already have an account?
+        <a routerLink="/login">Login</a>
+      </p>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow p-4" style="max-width: 450px; width: 100%;">
+    <h2 class="text-center mb-4">Add New Product</h2>
+    <form  [formGroup]="addProdForm" (ngSubmit)="onSubmit()">
+      <!-- Product Name -->
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input
+          type="text"
+          formControlName="name"
+          class="form-control"
+          placeholder="Enter Product name">
+      </div>
+      <!-- Product Category -->
+      <div class="mb-3">
+        <label class="form-label">Category</label>
+        <input
+          type="text"
+          formControlName="category"
+          class="form-control"
+          placeholder="Enter Product category">
+      </div>
+      <!-- Product Description -->
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <input
+          type="text"
+          formControlName="description"
+          class="form-control"
+          placeholder="Enter Product description">
+      </div>
+      <!-- Product Price -->
+      <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input
+          type="text"
+          formControlName="price"
+          class="form-control"
+          placeholder="Enter Product price">
+      </div>
+      <!-- Product Stock -->
+     <div class="mb-3">
+        <label class="form-label">Stock</label>
+        <input
+          type="text"
+          formControlName="stock"
+          class="form-control"
+          placeholder="Enter Product stock">
+      </div>
+      <div class="mb-3">
+  <label class="form-label">Product Image</label>
+
+  <input
+    type="file"
+    class="form-control"
+    accept="image/*"
+    (change)="onFileSelected($event)">
+</div>
+
+      <!-- Sign Up Button -->
+      <button type="submit" class=" w-100  btn">
+        Save
+      </button>
+
+    </form>
+  </div>
+</div>

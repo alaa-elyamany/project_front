@@ -4,7 +4,7 @@ import { FoundingStory } from './founding-story/founding-story';
 
 @Component({
   selector: 'app-about-us',
-  imports: [RouterLink,FoundingStory],
+  imports: [FoundingStory],
   templateUrl: './about-us.html',
   styleUrl: './about-us.css',
 })

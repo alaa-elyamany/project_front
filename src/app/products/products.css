@@ -1,25 +1,49 @@
 :host{
   display: block;
   background: linear-gradient(#fce8e2, #e7d8fa);
+  padding-bottom: 30px;
 }
-
-/* old code kept as reference */
+.card-body {
+  background-color: #fceaf4;
+}
 h2 {
   text-align: center;
-  padding-top: 30px;
+  padding: 30px;
+  color: rgb(207, 168, 254);
 }
+/* old code kept as reference */
 
+.card-img-top{
+    height: 300px;
+    object-fit: contain;
+   background-color: white;
+    transition: 0.5s;
+    transform-origin: center;
+}
+/*zoom for images inside card*/
+.zoom{
+    overflow: hidden;
+}
+.zoom:hover .card-img-top{
+    transform: scale(1.2);
+}
 .card {
-  border: 2px solid #e53935;
+  
   box-shadow: 0 0 8px rgba(229, 57, 53, 0.25);
 }
 
 .card:hover {
-  border-color: #c62828;
-  box-shadow: 0 0 12px rgba(198, 40, 40, 0.35);
+  border-color: #dea7f4;
+  box-shadow: 0 0 12px rgba(231, 137, 252, 0.35);
 }
 
 .card-title,
 .card-text {
-  color: #b71c1c;
+  color: #222121;
+}
+button {
+  background-color: rgb(207, 168, 254);
+  color: white;
+  border: none;
+  transition: 0.5s;
 }

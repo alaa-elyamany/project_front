@@ -1,0 +1,15 @@
+/* :host{
+    background: linear-gradient(-45deg, #fce8e2,#e7d8fa);
+    display: block;
+} */
+
+h2{
+    color: #333;
+    padding: 40px;
+}
+.btn1{
+     background-color:rgb(148, 80, 89);
+     color: white;
+     border: none;
+     border-radius: 5px;
+}

@@ -22,8 +22,15 @@
       <li class="nav-item position-relative ">
           <a class="nav-link me-2" ><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
         </li>
-    <button class="rounded-pill " id="login_button" routerLink="login">Login</button>
+        @if(isLoggedIn){
+          
+          <button class="rounded-pill " id="logout_button" (click)="logout()">Logout</button>
+        }
         
+        @else{
+          <button class="rounded-pill " id="login_button" routerLink="/login">Login</button>
+        }
+
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
