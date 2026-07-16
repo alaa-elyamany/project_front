@@ -25,8 +25,8 @@ export class Sidebar {
         text: "You will log out!",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
+        confirmButtonColor: "#cb7eff",
+        cancelButtonColor: "rgb(241, 180, 214)",
         confirmButtonText: "Yes"
       }).then((result) => {
     

@@ -1,0 +1,21 @@
+
+#customers_images:hover{
+    border: 5px solid rgb(246, 130, 248);
+}
+.three_div{
+    background-color: rgb(248, 239, 245);
+    padding: 20px;
+}
+:host{
+    display: block;
+  background-color: #f3e6f8;
+
+}
+h2 {
+  text-align: center;
+  padding: 30px;
+  color: rgb(207, 168, 254);
+}
+p{
+    color: rgb(110, 109, 109);
+}
