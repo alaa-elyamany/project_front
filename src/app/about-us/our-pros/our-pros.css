@@ -1,0 +1,29 @@
+.feature-card {
+    border-radius: 18px;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.feature-card i {
+    transition: .3s;
+}
+
+.feature-card:hover i {
+    transform: scale(1.15);
+}
+h2{
+    color: rgb(207, 168, 254);
+}
+:host{
+    display: block;
+    background-color:#f9eff8 ;
+}
+.card{
+    background-color: rgb(246, 246, 246);
+}

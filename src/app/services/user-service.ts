@@ -1,6 +1,6 @@
 import { Injectable,} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject} from 'rxjs';
 import { IUsers } from '../models/iusers';
 import { jwtDecode } from 'jwt-decode';
 

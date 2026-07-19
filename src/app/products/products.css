@@ -8,11 +8,9 @@
 }
 h2 {
   text-align: center;
-  padding: 30px;
+  padding: 10px;
   color: rgb(207, 168, 254);
 }
-/* old code kept as reference */
-
 .card-img-top{
     height: 300px;
     object-fit: contain;
@@ -20,23 +18,13 @@ h2 {
     transition: 0.5s;
     transform-origin: center;
 }
-/*zoom for images inside card*/
-.zoom{
-    overflow: hidden;
-}
-.zoom:hover .card-img-top{
-    transform: scale(1.2);
-}
 .card {
-  
   box-shadow: 0 0 8px rgba(229, 57, 53, 0.25);
 }
-
 .card:hover {
   border-color: #dea7f4;
   box-shadow: 0 0 12px rgba(231, 137, 252, 0.35);
 }
-
 .card-title,
 .card-text {
   color: #222121;
@@ -46,4 +34,41 @@ button {
   color: white;
   border: none;
   transition: 0.5s;
+}
+.category-menu{
+    gap: 18px;
+    margin: 40px 0;
+}
+.category-btn{
+    background: transparent;
+    border: none;
+    padding: 10px 5px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+    position: relative;
+    transition: .3s;
+}
+.category-btn::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: #d6abf5;
+    border-radius: 10px;
+    transition: .3s;
+}
+.category-btn:hover{
+    color: #d6abf5;
+}
+.category-btn:hover::after{
+    width: 100%;
+}
+.category-btn.active{
+    color: #d6abf5;
+}
+.category-btn.active::after{
+    width: 100%;
 }

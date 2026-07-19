@@ -9,19 +9,26 @@ import { Dashboard } from './dashboard/dashboard';
 import { AdminProducts } from './admin-products/admin-products';
 import { AddProduct } from './add-product/add-product';
 import { AdminUsers } from './admin-users/admin-users';
+import { UserLayout } from './user-layout/user-layout';
+import { AdminLayout } from './admin-layout/admin-layout';
 
 
 
 export const routes: Routes = [
-    {path:'',component:Home},
-    {path:'home',component:Home},
-    {path:'products',component:Products},
-    {path:'about_us',component:AboutUs},
+
     {path:'login',component:Login},
     {path:'signup',component: Signup},
-    {path:'dashboard',component:Dashboard},
-    {path:'adminproducts',component:AdminProducts},
-    {path:'addproduct',component:AddProduct},
-    {path:'getusers',component:AdminUsers},
+    {path:'',component:UserLayout,children:[
+        {path:'',component:Home},
+        {path:'home',component:Home},
+        {path:'products',component:Products},
+        {path:'about_us',component:AboutUs},
+    ]},
+    {path:'',component:AdminLayout,children:[
+        {path:'dashboard',component:Dashboard},
+        {path:'adminproducts',component:AdminProducts},
+        {path:'addproduct',component:AddProduct},
+        {path:'getusers',component:AdminUsers},
+    ]},
     {path:'**',component:Notfoundpage},
 ];

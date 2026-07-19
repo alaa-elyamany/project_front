@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-notfoundpage',
@@ -7,4 +8,9 @@ import { RouterLink } from '@angular/router';
   templateUrl: './notfoundpage.html',
   styleUrl: './notfoundpage.css',
 })
-export class Notfoundpage {}
+export class Notfoundpage {
+  constructor(private location:Location){}
+  goback(){
+    this.location.back();
+  }
+}

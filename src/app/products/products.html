@@ -1,8 +1,22 @@
-<h2 class="text-center mb-4">Products🌟</h2>
+<h2 class="text-center pb-2 pt-4">Products🌟</h2>
+<p class="text-center text-muted mb-1">Discover our lastest fashion</p>
+
+<div class="category-menu d-flex justify-content-center flex-wrap">
+
+  <button class="category-btn active"(click)="getProducts()"> All</button>
+  <button class="category-btn" (click)="getByCategory('dresses')">Dresses</button>
+  <button class="category-btn "(click)="getByCategory('tops')">Tops</button>
+  <button class="category-btn "(click)="getByCategory('skirts')">Skirts</button>
+  <button class="category-btn "(click)="getByCategory('shoes')"> Shoes</button>
+  <button class="category-btn "(click)="getByCategory('bags')">Bags</button>
+  <button class="category-btn "(click)="getByCategory('hijabs')">Hijab</button>
+  <button class="category-btn "(click)="getByCategory('accessories')">Accessories</button>
+
+</div>
 
 <div class="d-flex flex-wrap justify-content-center gap-4">
   <div class="card" style="width: 18rem;" *ngFor="let prod of productArr">
-    <img
+    <img 
       [src]="'http://localhost:5000/uploads/products/' + prod.imageUrl"
       class="card-img-top"
       [alt]="prod.name"

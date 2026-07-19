@@ -1,16 +1,14 @@
-import { inject, Injectable, Service } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { IProducts } from '../models/iproducts';
 
 
 @Injectable({
      providedIn: 'root',
 })
-// @Service()
+
 export class ProductService {
    constructor(private HttpClient: HttpClient) {}
-  // private http=inject(HttpClient);
+
   
    getProducts(){
     return this.HttpClient.get('http://localhost:5000/api/v1/products');
@@ -26,6 +24,9 @@ export class ProductService {
   }
   getProductById(id:string){
     return this.HttpClient.get(`http://localhost:5000/api/v1/products/${id}`);
+  }
+  getProductByCategory(category:string){
+    return this.HttpClient.get(`http://localhost:5000/api/v1/products?category=${category}`);
   }
 
   }

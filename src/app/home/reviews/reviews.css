@@ -19,3 +19,11 @@ h2 {
 p{
     color: rgb(110, 109, 109);
 }
+#customers_images{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+#customers_images:hover{
+    border: 5px solid rgb(245, 199, 246);
+}
