@@ -11,6 +11,9 @@ import { AddProduct } from './add-product/add-product';
 import { AdminUsers } from './admin-users/admin-users';
 import { UserLayout } from './user-layout/user-layout';
 import { AdminLayout } from './admin-layout/admin-layout';
+import { ProductDetails } from './product-details/product-details';
+import { Cart } from './cart/cart';
+import { AdminOrders } from './admin-orders/admin-orders';
 
 
 
@@ -23,12 +26,15 @@ export const routes: Routes = [
         {path:'home',component:Home},
         {path:'products',component:Products},
         {path:'about_us',component:AboutUs},
+        {path:'products/:id',component:ProductDetails},
+        {path:'cart',component:Cart}
     ]},
     {path:'',component:AdminLayout,children:[
         {path:'dashboard',component:Dashboard},
         {path:'adminproducts',component:AdminProducts},
         {path:'addproduct',component:AddProduct},
         {path:'getusers',component:AdminUsers},
+        {path:'adminorders',component:AdminOrders}
     ]},
     {path:'**',component:Notfoundpage},
 ];

@@ -1,0 +1,104 @@
+<div class="container py-5">
+
+  <!-- Product -->
+  <div class="row g-5 align-items-center">
+
+    <!-- Image -->
+    <div class="col-lg-5">
+      <img
+      
+        [src]="'http://localhost:5000/uploads/products/' + product.imageUrl"
+        class="img-fluid rounded-4 shadow"
+        [alt]="product.name">
+    </div>
+
+    <!-- Details -->
+    <div class="col-lg-7">
+
+      <h2 class="fw-bold">{{ product.name }}</h2>
+
+      <h3 class="text-danger fw-bold my-3">
+        {{ product.price | currency:'EGP' }}
+      </h3>
+
+      <p class="text-muted">
+        {{ product.description }}
+      </p>
+
+      <hr>
+
+      <p>
+        
+        <span
+          class="badge"
+          [class.bg-success]="product.stock > 0"
+          [class.bg-danger]="product.stock == 0">
+
+          {{ product.stock > 0 ? 'In Stock' : 'Out Of Stock' }}
+
+        </span>
+      </p>
+
+      <div class="d-flex gap-3 mt-4">
+
+        <button class="btn btn-dark px-4" (click)="addtoCart()">
+          Add To Cart
+        </button>
+
+
+      </div>
+
+    </div>
+
+  </div>
+  <hr/>
+
+  <!-- Similar Products -->
+
+  <div class="mt-5">
+
+    <h3 class="fw-bold mb-4">
+      Similar Products
+    </h3>
+
+    <div class="row g-4">
+
+      <div
+        class="col-md-3"
+        *ngFor="let prod of  productArr">
+
+        <div class="card border-0 shadow-sm h-100">
+
+          <img
+            [src]="'http://localhost:5000/uploads/products/' + prod.imageUrl"
+            class="card-img-top"
+            height="260">
+
+          <div class="card-body text-center">
+
+            <h5>{{ prod.name }}</h5>
+
+            <p class="text-danger fw-bold">
+              {{ prod.price }} EGP
+          
+            </p>
+
+            <button
+              class="btn btn-outline-dark w-100"
+              [routerLink]="['/products',prod._id]">
+
+              View 
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

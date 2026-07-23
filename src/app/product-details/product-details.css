@@ -1,0 +1,60 @@
+img{
+    object-fit: cover;
+}
+
+/* .card img{
+    height:260px;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.card:hover img{
+    transform:scale(1.05);
+} */
+
+.card{
+    transition:.3s;
+    border-radius:15px;
+    overflow:hidden;
+}
+.card-body {
+  background-color: #fceaf4;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.btn{
+    border-radius:10px;
+}
+
+h2{
+    font-weight:700;
+}
+
+.text-danger{
+    font-size:28px;
+}
+:host{
+     background: linear-gradient(-45deg, #fce8e2,#e7d8fa);
+    display: block;
+}
+h3 {
+  text-align: center;
+  padding: 10px;
+  color: rgb(207, 168, 254);
+}
+.card-img-top{
+    height: 300px;
+    object-fit: contain;
+   background-color: white;
+    transition: 0.5s;
+    transform-origin: center;
+}
+.btn {
+  background-color: rgb(207, 168, 254);
+  color: white;
+  border: none;
+  transition: 0.5s;
+}

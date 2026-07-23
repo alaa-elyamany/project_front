@@ -25,7 +25,7 @@
     <div class="card-body ">
       <h5 class="card-title">{{ prod.name }}</h5>
       <p class="card-text">Price: {{ prod.price | currency:'EGP' }}</p>
-      <button class="btn ">View</button>
+      <button [routerLink]="['/products',prod._id]" class="btn" style="width: 100%;">View</button>
     </div>
   </div>
 </div>

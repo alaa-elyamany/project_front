@@ -1,0 +1,95 @@
+<h2>Orders</h2>
+
+<div class="container mt-4">
+  <div class="card shadow-sm border-0">
+
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+      <h4 class="mb-0">Orders</h4>
+      <span class="badge bg-light text-dark">
+        {{ ordersArr.length }} Orders
+      </span>
+    </div>
+
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle text-center">
+
+          <thead class="table-light">
+            <tr>
+              <th>#</th>
+              <th>OrderId</th>
+              <th>UserId</th>
+              <th>Total Price</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @for (order of ordersArr; track order._id; let i = $index) {
+              <tr>
+                <td>{{ i + 1 }}</td>
+                <td>{{ order._id }}</td>
+                <td>{{ order.user_id }}</td>
+                <td>{{ order.totalprice }}</td>
+                <td>{{ order.status }}</td>
+                <td>
+                  <button
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                    (click)="openModal(order)">
+                    Edit Status
+                  </button>
+                </td>
+              </tr>
+            }
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Update Order Status</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="mb-3">
+            <select class="form-select"
+            [(ngModel)]="selectedOrder.status">
+            <option value="pending">pending</option>
+            <option value="processing">processing</option>
+            <option value="completed">completed</option>
+            <option value="cancelled">cancelled</option>
+          </select>
+
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          class="btn "
+          data-bs-dismiss="modal">
+          Cancel
+        </button>
+
+        <button
+          class="btn "
+          (click)="updateStatus()">
+          Update
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

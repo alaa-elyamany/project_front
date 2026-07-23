@@ -17,7 +17,12 @@ export class UserService {
         return this.HttpClient.post('http://localhost:5000/api/v1/auth/signup', load);
     }
     getUsers(){
-         return this.HttpClient.get('http://localhost:5000/api/v1/users');
+        const token=localStorage.getItem('token');
+         return this.HttpClient.get('http://localhost:5000/api/v1/users',{headers:{Authorization:`Bearer ${token}`}});
+    }
+    deleteUsers(id:string){
+        const token=localStorage.getItem('token');
+         return this.HttpClient.delete(`http://localhost:5000/api/v1/users/${id}`,{headers:{Authorization:`Bearer ${token}`}});
     }
 
     isLoggedIn = new BehaviorSubject<boolean>(!!localStorage.getItem('token'));

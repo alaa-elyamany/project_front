@@ -14,7 +14,9 @@ export class ProductService {
     return this.HttpClient.get('http://localhost:5000/api/v1/products');
   }
   updateProduct(id: string, data: any){
-    return this.HttpClient.put(`http://localhost:5000/api/v1/products/${id}`, data);
+    const token=localStorage.getItem('token');
+    return this.HttpClient.patch(`http://localhost:5000/api/v1/products/${id}`, data, {headers:{Authorization:`Bearer ${token}`}});
+  
   }
   deleteProduct(id: string) {
     return this.HttpClient.delete(`http://localhost:5000/api/v1/products/${id}`);

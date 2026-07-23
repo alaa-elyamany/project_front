@@ -1,0 +1,14 @@
+h2{
+     color: rgb(59, 59, 59);
+     padding: 13px;
+}
+.btn1{
+    background-color:rgb(148, 80, 89);
+     color: white;
+     border: none;
+     border-radius: 5px;
+}
+:host{
+    background-color: rgb(249, 237, 245);
+    display: block;
+}

@@ -5,16 +5,19 @@ import { CommonModule } from '@angular/common';
 import { OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-admin-products',
-  imports: [CommonModule,RouterLink],
+  imports: [CommonModule,RouterLink,FormsModule],
   templateUrl: './admin-products.html',
   styleUrls: ['./admin-products.css'],
 })
 export class AdminProducts implements OnInit {
   products!: IProducts[];
+    selectedProduct: any = {};
+selectedFile: File | null = null;
 
   constructor(
     private productService: ProductService,
@@ -23,8 +26,6 @@ export class AdminProducts implements OnInit {
 
  ngOnInit(): void {
   this.getProducts();
-  // this.updateProduct('64a0e7f3e4b0c3f1a2b5d6c', { name: 'Updated Product Name' });
-
 }
 getProducts() {
 this.productService.getProducts().subscribe({
@@ -41,18 +42,6 @@ this.productService.getProducts().subscribe({
   },
 });
 }
-// updateProduct(id: string, data: any) {
-//   this.productService.updateProduct(id, data).subscribe({
-//     next: (res: any) => {
-//       console.log('Product updated successfully:', res);
-//       this.getProducts(); 
-//       this.cdRef.detectChanges();
-//     },
-//     error: (err: any) => {
-//       console.error('Error updating product:', err);
-//     },
-//   });
-// }
 
 deleteProduct(id: string) {
   Swal.fire({
@@ -94,5 +83,44 @@ deleteProduct(id: string) {
 
     });
   }
+
+
+
+openModal(product: any) {
+  this.selectedProduct = { ...product };
+}
+
+onFileSelected(event: any) {
+  this.selectedFile = event.target.files[0];
+}
+
+
+  updateProduct() {
+    const formupdate=new FormData();
+    formupdate.append('name',this.selectedProduct.name);
+    formupdate.append('price',this.selectedProduct.price);
+    formupdate.append('category',this.selectedProduct.category);
+    formupdate.append('description',this.selectedProduct.description);
+    formupdate.append('stock',this.selectedProduct.stock);
+    if(this.selectedFile){
+        formupdate.append('image',this.selectedFile);
+    }
+  this.productService.updateProduct(this.selectedProduct._id,formupdate).subscribe({
+    next: (res: any) => {
+      
+      this.getProducts(); 
+      this.cdRef.detectChanges();
+           Swal.fire({
+        title: "Updated Successsfully!",
+        icon: "success",
+        draggable: true
+      });
+    },
+    error: (err: any) => {
+      console.error('Error updating product:', err);
+    },
+  });
+}
+
 
 }

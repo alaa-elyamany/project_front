@@ -3,11 +3,11 @@ import { IProducts } from '../models/iproducts';
 import { ProductService } from '../services/product-service';
 import { CommonModule } from '@angular/common';
 import { OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-products',
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink],
   templateUrl: './products.html',
   styleUrls: ['./products.css'],
 })

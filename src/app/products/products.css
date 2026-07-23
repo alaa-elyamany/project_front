@@ -18,12 +18,19 @@ h2 {
     transition: 0.5s;
     transform-origin: center;
 }
+
 .card {
   box-shadow: 0 0 8px rgba(229, 57, 53, 0.25);
+      transition:.3s;
+    border-radius:15px;
+    overflow:hidden;
 }
 .card:hover {
   border-color: #dea7f4;
   box-shadow: 0 0 12px rgba(231, 137, 252, 0.35);
+  
+    transform:translateY(-6px);
+
 }
 .card-title,
 .card-text {

@@ -1,0 +1,28 @@
+<section class="container py-5">
+
+  <div class="text-center mb-4">
+    <h2 class="">What's New🌟</h2>
+  </div>
+
+  <div class="d-flex overflow-auto gap-4 pb-3 news-scroll">
+@for(prod of productArr; track prod._id){
+
+   <div class="card shadow border-0" style="min-width: 280px;">
+     <img 
+      [src]="'http://localhost:5000/uploads/products/' + prod.imageUrl"
+      class="card-img-top"
+      [alt]="prod.name"
+    />
+       <div class="card-body ">
+      <h5 class="card-title">{{ prod.name }}</h5>
+      <p class="card-text">Price: {{ prod.price | currency:'EGP' }}</p>
+      <button [routerLink]="['/products',prod._id]" class="btn " style="width: 100%;">View</button>
+    </div>
+    </div>
+}
+</div>
+
+</section>
+
+
+

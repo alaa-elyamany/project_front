@@ -1,0 +1,41 @@
+.card img{
+    height:120px;
+    object-fit:cover;
+}
+
+.input-group{
+    max-width:140px;
+}
+
+.input-group input{
+    font-weight:600;
+}
+
+.btn-outline-dark{
+    width:40px;
+}
+
+.sticky-top{
+    top:100px;
+}
+
+.card{
+    border-radius:16px;
+}
+
+.btn-dark{
+    border-radius:10px;
+}
+:host{
+      display: block;
+  background-color: #f3e6f8;
+ 
+}
+.btn{
+     background-color:rgb(207, 168, 254) ;
+     border: none;
+}
+h2{
+    
+  color: rgb(207, 168, 254);
+}

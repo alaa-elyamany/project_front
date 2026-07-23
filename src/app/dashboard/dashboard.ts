@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product-service';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../services/user-service';
+import { OrdeService } from '../services/orde-service';
 @Component({
   selector: 'app-dashboard',
   imports: [CommonModule],
@@ -11,13 +12,16 @@ import { UserService } from '../services/user-service';
 export class Dashboard implements OnInit{
    productArr: any[]=[];
     usersArr: any[]=[];
+    ordersArr:any[]=[];
+     orderArr:any[]=[];
 
   constructor(private productService: ProductService, private userService: UserService,
-    private cdr: ChangeDetectorRef){}
+    private cdr: ChangeDetectorRef, private orderService:OrdeService){}
   
   ngOnInit(): void {
     this.getProducts();
     this.getUser();
+    this.getallOrder();
 
   }
   getProducts(){
@@ -51,6 +55,20 @@ export class Dashboard implements OnInit{
          console.log('finish');
        },
      });
+   }
+   getallOrder(){
+    this.orderService.getOrders().subscribe({
+      next:(res:any)=>{
+        console.log(res);
+        this.orderArr=res.data.orders;
+        this.ordersArr=res.data.orders.slice(-5).reverse();
+        this.cdr.detectChanges();
+      },
+      error: (err: any) => {
+         console.error(err);
+       }
+
+    })
    }
   }
 

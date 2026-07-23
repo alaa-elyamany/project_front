@@ -1,3 +1,4 @@
+<h2>Products</h2>
 <div class="table-responsive">
   <table class="table table-hover align-middle">
     <thead class="table-dark">
@@ -35,11 +36,90 @@
         <td>{{product.stock}}</td>
 
         <td>
-          <!--
-          <button class="btn btn-warning btn-sm me-2" [routerLink]="['/admin/update-product', product._id]">
-            Edit
-          </button>
-          -->
+          
+          <button
+  class="btn2"
+  data-bs-toggle="modal"
+  data-bs-target="#updateModal"
+  (click)="openModal(product)">
+  Edit
+</button>
+
+          <div class="modal fade" id="updateModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Update Product</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="mb-3">
+          <label>Name</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="selectedProduct.name">
+        </div>
+
+        <div class="mb-3">
+          <label>Price</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="selectedProduct.price">
+        </div>
+
+         <div class="mb-3">
+          <label>Category</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="selectedProduct.category">
+        </div>
+
+         <div class="mb-3">
+          <label>Description</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="selectedProduct.description">
+        </div>
+
+        <div class="mb-3">
+          <label>Stock</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="selectedProduct.stock">
+        </div>
+
+        <div class="mb-3">
+          <label>Image</label>
+          <input
+            type="file"
+            class="form-control"
+            (change)="onFileSelected($event)">
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="model">
+          Cancel
+        </button>
+
+        <button class="btn btn-success" (click)="updateProduct()">
+          Update
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+         
 
           <button class="btn1 btn-sm" (click)="deleteProduct(product._id)">
             Delete

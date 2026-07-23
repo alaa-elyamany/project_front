@@ -17,7 +17,6 @@ export class Header implements OnInit {
      private cdr: ChangeDetectorRef,
   ) {}
 
-
 ngOnInit(): void {
   this.userService.isLoggedIn.subscribe((status) => {
     console.log('isLoggedIn status:', status);
